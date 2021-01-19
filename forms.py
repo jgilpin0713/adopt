@@ -16,3 +16,4 @@ class EditPet(FlaskForm):
     url = StringField("Photo URL", validators = [Optional()])
     age = IntegerField("Age", validators = [InputRequired("Age required")])
     notes = StringField("Notes", validators = [Optional()])
+    available = BooleanField("Available?")

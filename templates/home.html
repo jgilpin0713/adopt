@@ -8,19 +8,25 @@
     <title>Adopt Us!</title>
 </head>
 <body>
-    <div class="container">
+    
         <h1 class="display-1">Pet Directory</h1>
-        
-        {% for pet in pets %}
+        <div class="container">
+            <div class="row">
+              <div class="col-md">
+                {% for pet in pets %}
             
-            <img src = "{{pet.photo_url}}" width = "150">
-            {% if pet.available %}
-                <a href = "/{{pet.id}}"> {{pet.name}} </a>is <b>Available</b>!
-            {% else %} 
-                <a href = "/{{pet.id}}"> {{pet.name}} </a>
-            {% endif %}
-        {% endfor %}
+                <img src = "{{pet.photo_url}}" width = "150">
+                {% if pet.available %}
+                    <a href = "/{{pet.id}}"> {{pet.name}} </a>is <b>Available</b>!
+                {% else %} 
+                    <a href = "/{{pet.id}}"> {{pet.name}} </a>
+                {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+              
         <a href="/add" class="btn btn-success">Add a Pet</a>
-      </div>
+      
 </body>
 </html>

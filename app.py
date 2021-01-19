@@ -48,6 +48,7 @@ def edit_pet(id):
         pet.url = form.url.data 
         pet.age = form.age.data 
         pet.notes = form.notes.data
+        pet.available = form.available.data
         db.session.commit()
         return redirect('/')
     else:

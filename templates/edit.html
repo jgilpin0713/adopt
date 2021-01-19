@@ -9,26 +9,36 @@ allowing edits to photo url, notes and avaialble
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Edit Pet</title>
 </head>
 
 <body>
-  <h1>Edit Pet</h1>
-  <form method="POST">
-    {{ form.hidden_tag() }}
-    {% for field in form if field.widget.input_type != 'hidden'%}
-    <p>
-      {{field.label}}
-      {{field}}
-      {% for err in field.errors %}
-      {{err}}
-      {% endfor %}
-    </p>
-    {% endfor %}
-    <button>Save</button>
-    <a href="/" class="btn btn-danger btn-lg">Go Back</a>
-  </form>
+  <div class="container">
+    <h1 class="display-1 text-center">Edit Pet</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
 
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden'%}
+        <div class="form-group">
+          {{field.label}}
+          {{field}}
+          {% for err in field.errors %}
+          <small class="form-text text-danger"></small>
+            {{err}}
+          </small>
+        {% endfor %}
+        </div>
+        {% endfor %}
+        <button class ="btn btn-success btn-lg">Save</button>
+        <a href="/" class="btn btn-danger btn-lg">Go Back</a>
+       </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
