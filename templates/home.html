@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Adopt Us!</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-1">Pet Directory</h1>
+        
+        {% for pet in pets %}
+            
+            <img src = "{{pet.photo_url}}" width = "150">
+            {% if pet.available %}
+                <a href = "/{{pet.id}}"> {{pet.name}} </a>is <b>Available</b>!
+            {% else %} 
+                <a href = "/{{pet.id}}"> {{pet.name}} </a>
+            {% endif %}
+        {% endfor %}
+        <a href="/add" class="btn btn-success">Add a Pet</a>
+      </div>
+</body>
+</html>
